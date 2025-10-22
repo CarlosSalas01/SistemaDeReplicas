@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tooltips CSS personalizados */
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-wrapper .tooltip-content {
+  visibility: hidden;
+  width: auto;
+  background-color: #374151;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 12px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-width: 200px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.tooltip-wrapper .tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #374151 transparent transparent transparent;
+}
+
+.tooltip-wrapper:hover .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Mejoras para tablas responsivas */
+.table-cell-truncate {
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Estilos para texto multilinea en celdas */
+.multiline-text {
+  word-break: break-word;
+  hyphens: auto;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .table-cell-truncate {
+    max-width: 80px;
+  }
+
+  .multiline-text {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .table-cell-truncate {
+    max-width: 60px;
+  }
+
+  .multiline-text {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    font-size: 0.7rem;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos personalizados para SweetAlert2 */
+.swal-custom-popup {
+  border-radius: 12px !important;
+  font-family: inherit !important;
+}
+
+.swal-custom-title {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+}
+
+.swal-custom-content {
+  font-size: 1rem !important;
+  color: #6b7280 !important;
+}
+
+.swal-custom-confirm {
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+}
+
+.swal-custom-cancel {
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+}
+
+/* Ejemplo de modal más pequeño */
+.swal-small {
+  width: 300px !important;
+  padding: 1rem !important;
+}
+
+/* Ejemplo de modal más grande */
+.swal-large {
+  width: 600px !important;
+  padding: 3rem !important;
+}
+
+/* Modal responsivo */
+@media (max-width: 768px) {
+  .swal-custom-popup {
+    width: 90% !important;
+    margin: 0 auto !important;
+  }
+}
