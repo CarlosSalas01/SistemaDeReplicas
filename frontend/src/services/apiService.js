@@ -1,5 +1,5 @@
 // Configuración de la API
-const API_BASE_URL = "http://localhost:3002/api";
+const API_BASE_URL = "http://localhost:3001/api";
 
 // Clase para manejar las llamadas a la API
 class ApiService {

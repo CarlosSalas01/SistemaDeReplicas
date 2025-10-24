@@ -25,7 +25,7 @@ class SocketService {
       // Configuración de conexión - MODO DEBUG
       console.log("🔧 DEBUG: Intentando conectar Socket.IO...");
       this.socket = io(
-        import.meta.env.VITE_API_URL || "http://localhost:3002",
+        import.meta.env.VITE_API_URL || "http://localhost:3001",
         {
           transports: ["polling", "websocket"], // Cambiar orden: polling primero
           timeout: 30000, // Más tiempo

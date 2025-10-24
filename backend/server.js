@@ -51,9 +51,13 @@ const corsOptions = {
   origin: process.env.CORS_ORIGIN?.split(",") || ["http://localhost:5173"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
+  optionsSuccessStatus: 200, // Para soporte de navegadores legacy
 };
 app.use(cors(corsOptions));
+
+// Middleware adicional para manejar preflight requests
+app.options("*", cors(corsOptions));
 
 // Parsear JSON
 app.use(express.json({ limit: "10mb" }));

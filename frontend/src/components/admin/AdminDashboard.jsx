@@ -97,7 +97,7 @@ const AdminDashboard = ({ username, user, onLogout }) => {
 
   // Función para manejar clic en notificación
   const handleNotificationClick = (notification) => {
-    console.log("🔔 Clic en notificación:", notification);
+    // console.log("🔔 Clic en notificación:", notification);
 
     // Cambiar a la pestaña de solicitudes
     setActiveTab("requests");
@@ -125,8 +125,6 @@ const AdminDashboard = ({ username, user, onLogout }) => {
       //     return newSet;
       //   });
       // }, 8000);
-
-      console.log("✨ Solicitud resaltada:", requestId);
     }
 
     // Marcar la notificación como leída
@@ -157,10 +155,7 @@ const AdminDashboard = ({ username, user, onLogout }) => {
   const loadAllRequests = useCallback(async () => {
     setLoadingRequests(true);
     try {
-      console.log("🔄 Cargando todas las solicitudes...");
       const response = await deploymentService.getAllRequests();
-      console.log("📋 Respuesta del servidor:", response);
-      console.log("📋 Datos recibidos:", response.data);
 
       setRequests(response.data);
 
@@ -197,17 +192,6 @@ const AdminDashboard = ({ username, user, onLogout }) => {
         deployed: deployedCount,
         failed: failedCount,
       });
-
-      console.log("📊 Estadísticas actualizadas:", {
-        total: totalRequests,
-        pending: pendingCount,
-        reviewing: reviewingCount,
-        approved: approvedCount,
-        rejected: rejectedCount,
-        deploying: deployingCount,
-        deployed: deployedCount,
-        failed: failedCount,
-      });
     } catch (error) {
       console.error("❌ Error cargando solicitudes:", error);
       modalService.showError("Error al cargar las solicitudes");
@@ -220,24 +204,12 @@ const AdminDashboard = ({ username, user, onLogout }) => {
   // Configurar Socket.IO para notificaciones del administrador
   useEffect(() => {
     if (user) {
-      console.log("🔍 AdminDashboard - User object:", user);
       const token = localStorage.getItem("authToken"); // Corregido: usar "authToken"
-      console.log(
-        "🔍 AdminDashboard - Token found:",
-        token ? "✅ YES" : "❌ NO"
-      );
       if (token) {
-        console.log(
-          "🔍 AdminDashboard - Conectando Socket.IO con rol:",
-          user.role
-        );
         socketService.connect(token, user);
 
         // Manejar nuevas solicitudes de despliegue
         const handleNewDeploymentRequest = (data) => {
-          console.log("🔔 Nueva solicitud de despliegue recibida:", data);
-          console.log("🔔 Data de la solicitud:", data.data);
-
           // Crear nueva notificación
           const newNotification = {
             id: Date.now(),
@@ -412,7 +384,6 @@ const AdminDashboard = ({ username, user, onLogout }) => {
 
   const handleDownloadWar = async (requestId, filename) => {
     try {
-      console.log("🔽 Iniciando descarga de archivo WAR, ID:", requestId);
       addActivity(
         `Iniciando descarga del archivo: ${
           filename || `solicitud-${requestId}.war`
@@ -421,7 +392,7 @@ const AdminDashboard = ({ username, user, onLogout }) => {
       );
 
       const response = await deploymentService.downloadWar(requestId);
-      console.log("📦 Respuesta de descarga:", response);
+      // console.log("📦 Respuesta de descarga:", response);
 
       // El servicio devuelve { blob, filename }
       const { blob, filename: serverFilename } = response;
