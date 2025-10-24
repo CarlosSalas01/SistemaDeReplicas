@@ -4,7 +4,7 @@
 
 ```
 inegi-replicas-system/
-├── 📄 README.md              # Documentación principal
+├──  README.md              # Documentación principal
 ├──  package.json           # Scripts centralizados
 ├──  DATABASE_SETUP.md      # Guía de configuración de BD
 ├──  frontend/              # Aplicación React
@@ -99,7 +99,7 @@ npm run dev:frontend
 - **Administrador**: `admin` / `admin123`
 - **Usuario**: `usuario` / `user123`
 
-## 📋 **Tecnologías Utilizadas**
+##  **Tecnologías Utilizadas**
 
 ### Frontend
 
