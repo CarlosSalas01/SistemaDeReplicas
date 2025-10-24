@@ -1,13 +1,13 @@
-# 🏗️ Sistema de Réplicas INEGI - Full Stack
+# Sistema de Réplicas - Full Stack
 
-## 📁 **Nueva Estructura del Proyecto**
+##  **Nueva Estructura del Proyecto**
 
 ```
 inegi-replicas-system/
 ├── 📄 README.md              # Documentación principal
-├── 📦 package.json           # Scripts centralizados
-├── 📚 DATABASE_SETUP.md      # Guía de configuración de BD
-├── 🎨 frontend/              # Aplicación React
+├──  package.json           # Scripts centralizados
+├──  DATABASE_SETUP.md      # Guía de configuración de BD
+├──  frontend/              # Aplicación React
 │   ├── src/
 │   │   ├── components/       # Componentes React
 │   │   ├── services/         # API cliente
@@ -17,7 +17,7 @@ inegi-replicas-system/
 │   ├── vite.config.js       # Configuración Vite
 │   ├── tailwind.config.js   # Configuración Tailwind
 │   └── index.html           # Punto de entrada
-├── ⚙️ backend/               # API Express
+├──  backend/               # API Express
 │   ├── config/              # Configuración DB
 │   ├── models/              # Modelos Sequelize
 │   ├── controllers/         # Lógica de negocio
@@ -27,10 +27,10 @@ inegi-replicas-system/
 │   ├── server.js            # Servidor con MySQL
 │   ├── server-dev.js        # Servidor sin DB
 │   └── .env                 # Variables de entorno
-└── 📄 docs/                 # Documentación adicional
+└──  docs/                 # Documentación adicional
 ```
 
-## 🚀 **Comandos Disponibles**
+##  **Comandos Disponibles**
 
 ### Desarrollo Completo (Frontend + Backend)
 
@@ -41,15 +41,6 @@ npm run install:all
 # Ejecutar frontend y backend simultáneamente
 npm run dev
 
-# Solo frontend (React)
-npm run dev:frontend
-
-# Solo backend (con MySQL)
-npm run dev:backend
-
-# Solo backend (sin base de datos)
-npm run dev:backend-no-db
-```
 
 ### Construcción y Despliegue
 
@@ -101,13 +92,7 @@ npm run dev:backend-no-db
 npm run dev:frontend
 ```
 
-## 🌐 **URLs del Sistema**
-
-- **Frontend**: http://localhost:5173
-- **Backend API**: http://localhost:3002/api
-- **API Health**: http://localhost:3002/api/health
-
-## 🔐 **Credenciales de Prueba**
+##  **Credenciales de Prueba**
 
 ### Modo Desarrollo (sin base de datos):
 
@@ -118,36 +103,36 @@ npm run dev:frontend
 
 ### Frontend
 
-- ⚛️ **React 19** - Framework principal
-- ⚡ **Vite** - Build tool y dev server
-- 🎨 **Tailwind CSS** - Framework CSS
-- 🦸 **Heroicons** - Iconografía
-- 🍯 **SweetAlert2** - Modales y alertas
+-  **React 19** - Framework principal
+-  **Vite** - Build tool y dev server
+-  **Tailwind CSS** - Framework CSS
+-  **Heroicons** - Iconografía
+-  **SweetAlert2** - Modales y alertas
 
 ### Backend
 
-- 🟢 **Node.js + Express** - Servidor API
-- 🔐 **JWT** - Autenticación
-- 🗄️ **Sequelize + MySQL** - Base de datos
-- 🔒 **bcrypt** - Hash de contraseñas
-- 🛡️ **Helmet + CORS** - Seguridad
+-  **Node.js + Express** - Servidor API
+-  **JWT** - Autenticación
+-  **Sequelize + MySQL** - Base de datos
+- **bcrypt** - Hash de contraseñas
+- **Helmet + CORS** - Seguridad
 
-## 🔄 **Flujo de Desarrollo**
+##  **Flujo de Desarrollo**
 
 1. **Desarrollo**: Usar `npm run dev:backend-no-db` + `npm run dev:frontend`
 2. **Testing**: Probar funcionalidades en http://localhost:5173
 3. **Base de datos**: Configurar MySQL cuando necesites persistencia
 4. **Producción**: `npm run build` + `npm start`
 
-## 📈 **Próximos Pasos**
+##  **Próximos Pasos**
 
-- ✅ **Estructura organizada** - Completado
-- 🔄 **Testing de integración** - En progreso
-- 📋 **Configuración MySQL** - Opcional
-- 🚀 **Deploy scripts** - Pendiente
-- 📊 **Monitoring** - Pendiente
+-  **Estructura organizada** - Completado
+-  **Testing de integración** - En progreso
+-  **Configuración MySQL** - Opcional
+-  **Deploy scripts** - Pendiente
+-  **Monitoring** - Pendiente
 
-## 💡 **Ventajas de la Nueva Estructura**
+##  **Ventajas de la Nueva Estructura**
 
 1. **Separación clara** frontend/backend
 2. **Scripts centralizados** desde la raíz
